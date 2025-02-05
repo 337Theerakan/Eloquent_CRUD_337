@@ -52,10 +52,18 @@ export default function OrderDetailForm({ orderDetail = {}, orders, products }) 
                     <input type="number" value={data.price} onChange={(e) => setData('price', e.target.value)} className="shadow-md border rounded-lg w-full py-2 px-3 text-gray-700 focus:ring focus:ring-green-300" />
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-between">
+                <Link
+                        href={route('orderDetails.index')}
+                        className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                    >
+                        ย้อนกลับ
+                    </Link>
+                    
                     <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg focus:ring focus:ring-green-300 shadow-md" disabled={processing}>
                         {orderDetail.id ? 'อัปเดตรายละเอียด' : 'เพิ่มรายละเอียด'}
                     </button>
+
                 </div>
             </form>
         </div>

@@ -79,9 +79,6 @@ export default function OrderList() {
             </table>
 
             <div className="mt-6">
-                <Link href="/sales" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    ไปหน้าระบบขายสินค้า
-                </Link>
             </div>
         </div>
     );

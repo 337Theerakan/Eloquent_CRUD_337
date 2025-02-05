@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm } from '@inertiajs/react';
+import { useForm, Link } from '@inertiajs/react';
 
 export default function OrderForm({ order = {}, customers, products }) {
     const { data, setData, post, put, processing, errors } = useForm({
@@ -120,7 +120,13 @@ export default function OrderForm({ order = {}, customers, products }) {
                     + เพิ่มสินค้า
                 </button>
 
-                <div className="flex justify-center">
+                <div className="flex justify-between">
+                    <Link
+                        href={route('orders.index')}
+                        className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                    >
+                        ย้อนกลับ
+                    </Link>
                     <button
                         type="submit"
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg focus:ring focus:ring-green-300 shadow-md"
@@ -128,6 +134,7 @@ export default function OrderForm({ order = {}, customers, products }) {
                     >
                         {order.id ? 'อัปเดตคำสั่งซื้อ' : 'สร้างคำสั่งซื้อ'}
                     </button>
+
                 </div>
             </form>
         </div>

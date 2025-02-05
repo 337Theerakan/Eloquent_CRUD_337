@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from '@inertiajs/react';
+import { useForm, Link } from '@inertiajs/react';
 
 export default function CustomerForm({ customer = {} }) {
     const { data, setData, post, put, processing, errors } = useForm({
@@ -71,7 +71,15 @@ export default function CustomerForm({ customer = {} }) {
                     ></textarea>
                     {errors.address && <p className="text-red-500 text-xs italic mt-1">{errors.address}</p>}
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-between">
+                <Link
+                // ตือ Link ที่ใช้สำหรับการกลับไปยังหน้ารายชื่อลูกค้า โดยใช้ route('customers.index') เพื่อสร้าง URL สำหรับการเรียกหน้ารายชื่อลูกค้า
+                        href={route('customers.index')}
+                        className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                    >
+                        ย้อนกลับ
+                    </Link>
+
                     <button
                         type="submit"
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg focus:ring focus:ring-green-300 shadow-md"
@@ -79,6 +87,7 @@ export default function CustomerForm({ customer = {} }) {
                     >
                         {customer.id ? 'อัปเดตข้อมูลลูกค้า' : 'เพิ่มลูกค้า'}
                     </button>
+
                 </div>
             </form>
         </div>
