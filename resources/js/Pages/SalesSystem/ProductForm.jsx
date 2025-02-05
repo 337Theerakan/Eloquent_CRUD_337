@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, Link } from '@inertiajs/react';
+import { useForm , Link } from '@inertiajs/react';
 
 export default function ProductForm({ product = {} }) {
     const { data, setData, post, put, processing, errors, reset } = useForm({
@@ -71,11 +71,10 @@ export default function ProductForm({ product = {} }) {
                 <div className="flex items-center justify-between">
                 <Link
                         href={route('products.index')}
-                        className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+                        className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
                     >
                         ย้อนกลับ
                     </Link>
-                    
                     <button
                         type="submit"
                         className={`bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${processing ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -83,7 +82,6 @@ export default function ProductForm({ product = {} }) {
                     >
                         {processing ? 'กำลังบันทึก...' : (product.id ? 'อัปเดตสินค้า' : 'เพิ่มสินค้า')}
                     </button>
-
                 </div>
             </form>
         </div>
