@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePage, Link } from '@inertiajs/react';
 import { Inertia } from '@inertiajs/inertia';
+import NavigationDialog from '../../Components/NavigationDialog';
 
 export default function OrderDetailList() {
     const { orderDetails } = usePage().props;
@@ -13,10 +14,16 @@ export default function OrderDetailList() {
 
     return (
         <div className="p-6 bg-gray-100 min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Order Details</h1>
-            <Link href={route('orderDetails.create')} className="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
-                + Add Order Detail
-            </Link>
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold">Order Details</h1>
+                <div className="flex space-x-4">
+
+                    <Link href={route('orderDetails.create')} className="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+                        + Add Order Detail
+                    </Link>
+                    <NavigationDialog />
+                </div>
+            </div>
             <table className="w-full border-collapse border border-gray-300 mt-4">
                 <thead>
                     <tr className="bg-gray-200">

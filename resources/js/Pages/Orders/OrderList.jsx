@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePage, Link } from '@inertiajs/react';
 import { Inertia } from '@inertiajs/inertia';
+import NavigationDialog from '../../Components/NavigationDialog';
 
 export default function OrderList() {
     const { orders, flash } = usePage().props;
@@ -29,12 +30,16 @@ export default function OrderList() {
 
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">รายการคำสั่งซื้อ</h1>
-                <Link
-                    href={route('orders.create')}
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                >
-                    เพิ่มคำสั่งซื้อใหม่
-                </Link>
+                <div className="flex space-x-4">
+
+                    <Link
+                        href={route('orders.create')}
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                        เพิ่มคำสั่งซื้อใหม่
+                    </Link>
+                    <NavigationDialog />
+                </div>
             </div>
 
             <table className="w-full border-collapse border border-gray-300">

@@ -1,6 +1,7 @@
 import React from "react";
 import { usePage, Link, useForm } from "@inertiajs/react";
 import { Inertia } from "@inertiajs/inertia";
+import NavigationDialog from '../../Components/NavigationDialog';
 
 export default function Inprod() {
     const { products, flash } = usePage().props;
@@ -14,10 +15,7 @@ export default function Inprod() {
     return (
         <div className="p-6 bg-gray-100 min-h-screen">
             {flash?.message && (
-                <div
-                    className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
-                    role="alert"
-                >
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
                     {flash.message}
                 </div>
             )}
@@ -29,12 +27,16 @@ export default function Inprod() {
 
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">รายการสินค้า</h1>
-                <Link
-                    href={route("products.create")}
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                >
-                    เพิ่มสินค้าใหม่
-                </Link>
+                <div className="flex space-x-4">
+
+                    <Link
+                        href={route("products.create")}
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                        เพิ่มสินค้าใหม่
+                    </Link>
+                    <NavigationDialog />
+                </div>
             </div>
 
             <table className="w-full border-collapse border border-gray-300">
@@ -67,11 +69,6 @@ export default function Inprod() {
                 </tbody>
             </table>
 
-            <div className="mt-6">
-                <Link href="/sales" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    ไปหน้าระบบขายสินค้า
-                </Link>
-            </div>
         </div>
     );
 }

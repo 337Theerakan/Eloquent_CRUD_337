@@ -16,7 +16,12 @@ class CustomerController extends Controller {
     }
 
     public function store(Request $request) {
-        Customer::create($request->validate(['name' => 'required', 'email' => 'required|email']));
+        Customer::create($request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+        ]));
         return redirect()->route('customers.index');
     }
 
@@ -25,7 +30,12 @@ class CustomerController extends Controller {
     }
 
     public function update(Request $request, Customer $customer) {
-        $customer->update($request->validate(['name' => 'required', 'email' => 'required|email']));
+        $customer->update($request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+        ]));
         return redirect()->route('customers.index');
     }
 
