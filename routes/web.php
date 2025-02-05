@@ -34,8 +34,7 @@ Route::get('/orderDetails', [OrderDetailController::class, 'index'])
     ->name('orderDetails.index');
 
 // resource คือ การสร้าง route ทั้งหมด ให้กับ controller ที่เรากำหนด โดยไม่ต้องสร้าง route แยกแต่ละ method ของ controller
-// โดยการใช้คำสั่ง Route::resource('ชื่อ route', 'ชื่อ controller');
-//โดยที่ชื่อ route คือชื่อ route ที่เราต้องการให้มีทั้งหมด และชื่อ controller คือชื่อ controller ที่เราต้องการให้มีทั้งหมด
+
 Route::resource('products', ProductController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('orders', OrderController::class);
