@@ -59,10 +59,10 @@ export default function NavigationDialog() {
                       <Link href={route('products.index')} className="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-700">
                         ไปที่ Inprod
                       </Link>
-                      <Link href={route('customers.index')} className="bg-green-500 text-white py-2 px-4 rounded hover:bg-red-700">
+                      <Link href={route('customers.index')} className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">
                         ไปที่ Customers
                       </Link>
-                      <Link href={route('orders.index')} className="bg-red-500 text-white py-2 px-4 rounded hover:bg-green-700">
+                      <Link href={route('orders.index')} className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700">
                         ไปที่ Orders
                       </Link>
                       <Link href={route('orderDetails.index')} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
