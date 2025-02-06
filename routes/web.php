@@ -26,7 +26,6 @@ Route::get('/products', [SalesSystemController::class, 'productIndex'])
 
 Route::get('/customers', [CustomerController::class, 'index'])
     ->name('customers.index');
-
 Route::get('/orders', [OrderController::class, 'index'])
     ->name('orders.index');
 

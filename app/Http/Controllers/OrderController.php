@@ -102,6 +102,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
+        // validated ข้อมูลที่รับมาจากฟอร์ม โดยต้องมีข้อมูลที่ต้องการและถูกต้อง 
         $validated = $request->validate([
             'customer_id' => 'required|exists:customers,id',
             'status' => 'required|in:pending,completed,cancelled',
